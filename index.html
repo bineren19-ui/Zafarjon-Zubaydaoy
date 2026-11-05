@@ -780,7 +780,7 @@
     </div>
   </div>
 
-  <p class="hero-date" id="heroDate">15 • 09 • 2026</p>
+  <p class="hero-date" id="heroDate">15 • 11 • 2026</p>
   <div class="hero-names">
     <span class="hero-name" id="n1">Zafarjon</span>
     <span class="hero-amp" id="amp">&amp;</span>
@@ -839,7 +839,7 @@
     <div class="date-block reveal reveal-delay-1">
       <div class="date-num shimmer">15</div>
       <div class="date-sub">Noyabr</div>
-      <div class="date-year"></div>
+      <div class="date-year">2026 · soat 17:00</div>
     </div>
 
     <div class="calendar reveal reveal-delay-2">
@@ -882,8 +882,7 @@
     <h2 class="section-title reveal reveal-delay-1">Bog`ishamol restorani</h2>
     <div class="venue-card reveal reveal-delay-2">
       <p class="venue-address">
-        <!-- Manzilni shu yerga kiriting, masalan: "Toshkent sh., ... ko'chasi, 12-uy" -->
-        Manzilni biling!
+        Samarqand sh., Chuqur yo‘l ko‘chasi, 56-uy
       </p>
       <!--
         MANZIL SOZLAMASI: pastdagi skript ichidagi VENUE_GOOGLE va
@@ -966,15 +965,15 @@
      o'sha holda tugma manzil NOMI bo'yicha qidiradi (kamroq aniq).
   ============================================================= */
   var VENUE_GOOGLE = {
-    name: 'Bog`ishamol restorani',
-    lat: 41.381305369617465,
-    lng: 69.3120279514391
+    name: 'Bog`ishamol restorani, Samarqand',
+    lat: 39.661809,
+    lng: 66.953642
   };
 
   var VENUE_YANDEX = {
-    name: 'Bog`ishamol restorani',
-    lat: 41.381597, 
-    lng: 69.311964
+    name: 'Bog`ishamol restorani, Samarqand',
+    lat: 39.661809,
+    lng: 66.953642
   };
 
   function setupMapLinks(){
@@ -1063,7 +1062,7 @@
     revealEls.forEach(function(el){ el.classList.add('in-view'); });
   }
 
-  /* ---------- September 2026 calendar ---------- */
+  /* ---------- November 2026 calendar ---------- */
   (function buildCalendar(){
     var grid = document.getElementById('calendarGrid');
     if (!grid) return;
@@ -1075,7 +1074,7 @@
       grid.appendChild(el);
     });
 
-    var year = 2026, month = 8; // September (0-indexed)
+    var year = 2026, month = 10; // November (0-indexed)
     var firstDay = new Date(year, month, 1).getDay(); // 0=Sun..6=Sat
     var mondayIndex = (firstDay + 6) % 7; // convert to Mon-first index
     var daysInMonth = new Date(year, month + 1, 0).getDate();
@@ -1095,7 +1094,7 @@
 
   /* ---------- Countdown ---------- */
   (function countdown(){
-    var target = new Date(2026, 8, 15, 0, 0, 0).getTime(); // 24 Sept 2026 local time
+    var target = new Date('2026-11-15T17:00:00+05:00').getTime(); // 15 Noyabr 2026, soat 17:00 (Toshkent/Samarqand vaqti)
     var elD = document.getElementById('cd-days');
     var elH = document.getElementById('cd-hours');
     var elM = document.getElementById('cd-min');
